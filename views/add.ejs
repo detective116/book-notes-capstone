@@ -1,30 +1,89 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Add New Book</title>
-</head>
-<body>
-  <h1>Add a New Book</h1>
-  <form action="/add" method="POST">
-    <label>Title:</label>
-    <input type="text" name="title" required><br><br>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add New Book</title>
 
-    <label>Author:</label>
-    <input type="text" name="author"><br><br>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-    <label>Rating (1-5):</label>
-    <input type="number" name="rating" min="1" max="5"><br><br>
+  <body class="bg-light">
+    <!-- Navbar (optional) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">BookNotes</a>
+        <a href="/" class="btn btn-outline-primary">🏠 Home</a>
+      </div>
+    </nav>
 
-    <label>Review:</label>
-    <textarea name="review"></textarea><br><br>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title mb-4 text-center">Add a New Book</h3>
 
-    <label>Cover URL:</label>
-    <input type="text" name="cover_url"><br><br>
+              <form action="/add" method="POST" class="vstack gap-3">
+                <div>
+                  <label class="form-label">Title<span class="text-danger">*</span></label>
+                  <input
+                    type="text"
+                    name="title"
+                    class="form-control"
+                    required
+                  />
+                </div>
 
-    <label>Read Date:</label>
-    <input type="date" name="read_date"><br><br>
+                <div>
+                  <label class="form-label">Author</label>
+                  <input type="text" name="author" class="form-control" />
+                </div>
 
-    <button type="submit">Add Book</button>
-  </form>
-</body>
+                <div>
+                  <label class="form-label">Rating (1‑5)</label>
+                  <input
+                    type="number"
+                    name="rating"
+                    min="1"
+                    max="5"
+                    class="form-control"
+                  />
+                </div>
+
+                <div>
+                  <label class="form-label">Review</label>
+                  <textarea
+                    name="review"
+                    class="form-control"
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label class="form-label">Cover URL (optional)</label>
+                  <input type="text" name="cover_url" class="form-control" />
+                </div>
+
+                <div>
+                  <label class="form-label">Read Date</label>
+                  <input type="date" name="read_date" class="form-control" />
+                </div>
+
+                <button class="btn btn-primary w-100 mt-3" type="submit">
+                  ➕ Add Book
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS bundle (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
