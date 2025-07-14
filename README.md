@@ -1,3 +1,5 @@
+Deployed live at https://your-app-name.onrender.com
+
 # 📚 Book Notes Capstone Project
 
 A web app to track books you've read, write reviews, and fetch book covers automatically via the Open Library API.
