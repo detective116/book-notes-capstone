@@ -12,11 +12,10 @@ const port = 3000;
 
 // ── PostgreSQL ───────────────────────────────────────────────
 const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "Booknotes",   // keep lowercase
-  password: "258025",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 db.connect();
 
